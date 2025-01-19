@@ -15,8 +15,9 @@ function fillorclear(object, n) {
   }
 }
 
+// 21 is the minimum amount of neopoints for the wish to count
 var donation = 21;
-var wish = "Neopets 25th Birthday Goodie Bag";
+var wish = "Your Wish";
 
 var amount_textbox = document.querySelector('[type="text"][size="5"][maxlength="5"][name="donation"]');
 var wish_textbox = document.querySelector('[type="text"][size="20"][maxlength="40"][name="wish"]');
