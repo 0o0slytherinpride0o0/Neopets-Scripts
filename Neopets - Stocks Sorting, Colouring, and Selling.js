@@ -20,7 +20,8 @@ var currentStock;
 var sellCurrentStock;
 
 // I added this because I use this a lot. Note that the first two rows of table are the headers for the table
-// and the last row is the summary row at the bottom, which is why you use - 3
+// the last row is the summary row at the bottom, which cancels out the fact that the indices go from 0 to len - 1
+// then hidden sell row, which is why you use - 3 here
 // this is also why you start at index 2
 // the reason you add + 2 to go through the rows is because the sell rows still count, they are just currently hidden
 // it took me a while to figure this out, so I'm adding this is case it's helpful to anyone else
