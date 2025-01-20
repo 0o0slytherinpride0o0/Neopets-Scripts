@@ -28,4 +28,4 @@ if (angle_solution == 16 | angle_solution < 8) {
 
 var solution_image = document.querySelector('[src="https://images.neopets.com/shenkuu/lunar/phases/' + CSS.escape(angle_solution) + '.gif"]');
 
-solution_image.setAttribute("style", "border: 2px solid blue");
+solution_image.setAttribute("style", "border: 3px solid red");
