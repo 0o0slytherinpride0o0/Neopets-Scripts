@@ -150,6 +150,7 @@ var num_keep_limit = 6;
 // otherwise it would keep all of them
 if (any_15 == 0) {
   num_keep = num_keep -1;
+  num_keep_limit = num_keep_limit - 1;
 }
 
 // this captures the price for the stock that's num_keep above the first 15
