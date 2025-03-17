@@ -5,20 +5,21 @@
 // @include        *://www.neopets.com/petpetlab.phtml*
 // ==/UserScript==
 
-var table = document.querySelector("table[cellpadding='6'][cellspacing='4'][border='0']");
+var div = document.querySelector("form[action='process_petpetlab.phtml']").children[0];
 
-if (table != null) {
-  var len = table.children[0].children[0].children.length;
-  var tr = document.createElement("tr");
-  tr.style.textAlign = "center";
-  tr.style.fontWeight = "bold";
-  tr.style.color = "darkblue";
+if (div != null) {
+  var len = div.children.length;
+  var span = document.createElement("span");
+  span.style.display = "block";
+  span.style.marginBottom = "8px";
+  span.style.padding = "3px 0px 3px 0px";
+  span.style.backgroundColor = "darkblue";
+  span.style.color = "white";
+  span.style.font = "bold small-caps 10pt verdana";
   
   for (var i=0; i<len; i++) {
-    var td = document.createElement("td");
-    td.innerText = table.children[0].children[0].children[i].querySelector("input").value;
-    td.style.border = "1px solid #000";
-    tr.appendChild(td);
+    var pet_name = span.cloneNode();
+    pet_name.innerText = table.children[i].querySelector("input").value;
+    table.children[i].insertBefore(pet_name, table.children[i].children[0]);
   }
-  table.children[0].insertBefore(tr, table.children[0].children[0]);
 }
