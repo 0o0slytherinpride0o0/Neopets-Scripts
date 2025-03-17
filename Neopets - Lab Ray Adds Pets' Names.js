@@ -16,5 +16,7 @@ addEventListener("DOMContentLoaded", () => {
     name.style.paddingTop = "12px";
 
     pet.previousElementSibling.previousElementSibling.after(name);
+    // adding this because TNT changed stuff when they added the new premium perk
+    pet.parentElement.style.height = "242px";
   }
 });
