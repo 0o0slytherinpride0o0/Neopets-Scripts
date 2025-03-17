@@ -19,7 +19,7 @@ if (div != null) {
   
   for (var i=0; i<len; i++) {
     var pet_name = span.cloneNode();
-    pet_name.innerText = table.children[i].querySelector("input").value;
-    table.children[i].insertBefore(pet_name, table.children[i].children[0]);
+    pet_name.innerText = div.children[i].querySelector("input").value;
+    div.children[i].insertBefore(pet_name, div.children[i].children[0]);
   }
 }
