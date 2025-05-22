@@ -5,27 +5,24 @@
 // @match        *://www.neopets.com/shenkuu/lunar/?show=puzzle
 // ==/UserScript==
 
-var angle = parseInt(document.body.innerHTML.match(/angleKreludor=([0-9]*)&/)[1]);
+var angle_match = document.body.innerHTML.match(/angleKreludor=([0-9]*)&/);
 
-// the solution according to JN is just dividing by 16 and rounding
-angle_solution = Math.round(angle/22.5);
+if (angle_match != null) {
+  
+  var angle = Number(angle_match[1]);
+  
+  // the solution according to JN is just dividing by 22.5 and rounding
+  // plus 0 and 16 have the same solution
+  var angle_solution = Math.round(angle/22.5) % 16;
 
-// but JS rounds weirdly, it rounds 0.5 DOWN instead of up, so we have to fix that
-// at least, I think... I'm too lazy to check if this is really needed
-// I don't think it is but it's easy enough to account for
-if ((angle/22.5) % 1 == 0.5) {
-  angle_solution = angle_solution + 1;
+  // the image names don't match the solution number though:
+  // the image numbers are 0-15 from the top left to the bottom right
+  // the solution numbers are 0-15 from the bottom left to the top right
+  // so the new moon (all black) is the image 0.gif but 8 is the solution number
+  const image_number_arr = Array(8).fill(1).map((x, index) => index + 8).concat(Array(8).fill(1).map((x, index) => index));
+  var image_number = image_number_arr[angle_solution];
+
+  var solution_image = document.querySelector('img[src="https://images.neopets.com/shenkuu/lunar/phases/' + image_number + '.gif"]');
+
+  solution_image.setAttribute("style", "border: 3px solid red");
 }
-
-// now we have to change this around because the images are named 0-15 from the top left to the bottom right
-// but the solution numbers are 0-15 from the bottom left to the top right
-// so the new moon (all black) is the image 0.gif but 8 is the solution number
-if (angle_solution == 16 | angle_solution < 8) {
-  angle_solution = (angle_solution + 8) % 16;
-} else {
-  angle_solution = angle_solution - 8;
-}
-
-var solution_image = document.querySelector('[src="https://images.neopets.com/shenkuu/lunar/phases/' + CSS.escape(angle_solution) + '.gif"]');
-
-solution_image.setAttribute("style", "border: 3px solid red");
