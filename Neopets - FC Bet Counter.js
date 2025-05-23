@@ -6,7 +6,5 @@
 // ==/UserScript==
 
 var table = document.querySelector("table[border='0'][cellpadding='4'][cellspacing='2'][width='500'][bgcolor='black']");
-
 var count = table.children[0].children.length - 3;
-
-table.children[0].children[0].children[0].children[0].children[0].innerText += " --- Count: " + count;
+table.querySelector("tbody tr td font b").innerText += " --- Count: " + count + (count == 10 ? "\u2705" : "");
