@@ -1,6 +1,7 @@
 // ==UserScript==
 // @author       0o0slytherinpride0o0
 // @name         Neopets - Lunar Temple Daily Solver
+// @version      2.0
 // @description  Highlights the correct answer for the Lunar Temple Daily
 // @match        *://www.neopets.com/shenkuu/lunar/?show=puzzle
 // ==/UserScript==
