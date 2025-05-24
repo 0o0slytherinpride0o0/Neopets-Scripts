@@ -1,6 +1,7 @@
 // ==UserScript==
 // @author         0o0slytherinpride0o0
 // @name           Neopets - FC Bet Counter
+// @version        2.0
 // @description    Adds a simple count of FC bets in the table header
 // @include        *://www.neopets.com/pirates/foodclub.phtml?type=current_bets*
 // ==/UserScript==
