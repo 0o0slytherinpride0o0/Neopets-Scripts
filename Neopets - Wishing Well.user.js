@@ -1,6 +1,7 @@
 // ==UserScript==
 // @author         0o0slytherinpride0o0
 // @name           Neopets - Wishing Well
+// @version        2.0
 // @description    Fills your item wish & donation amount in the textbox when you click on the corresponding buttons
 // @include        *://www.neopets.com/wishing.phtml*
 // ==/UserScript==
