@@ -1,6 +1,7 @@
 // ==UserScript==
 // @author         0o0slytherinpride0o0
 // @name           JN iDB - Add DTI link to wearables
+// @version        2.0
 // @description    Adds DTI link to wearable items in JN's iDB, at the top of the "Find This Item" section
 // @include        *items.jellyneo.net/item/*
 // ==/UserScript==
